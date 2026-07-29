@@ -67,14 +67,24 @@ img { max-width: 100%; display: block; }
 }
 
 .monogram {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-crimson);
 }
 
 .monogram span { color: var(--color-blue); }
+
+.monogram-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 .site-nav {
   display: flex;
@@ -130,8 +140,11 @@ img { max-width: 100%; display: block; }
   padding: 130px 24px 60px;
   background:
     radial-gradient(circle at 15% 10%, rgba(176, 32, 58, 0.35) 0%, transparent 45%),
-    radial-gradient(circle at 85% 90%, rgba(47, 102, 144, 0.35) 0%, transparent 50%),
-    #0b0b10;
+    radial-gradient(circle at 85% 90%, rgba(47, 102, 144, 0.4) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(11,11,16,0.88) 0%, rgba(11,11,16,0.94) 60%, #0b0b10 100%),
+    url('../images/jack.jpeg');
+  background-size: cover;
+  background-position: center 20%;
 }
 
 .hero-inner { max-width: 640px; }
@@ -324,6 +337,13 @@ img { max-width: 100%; display: block; }
   background: var(--color-bg-card);
   padding: 32px 24px;
   border-top: 4px solid var(--color-crimson);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
 .service-card:nth-child(2) { border-top-color: var(--color-blue); }
@@ -351,23 +371,29 @@ img { max-width: 100%; display: block; }
 
 .gallery-item {
   aspect-ratio: 1 / 1;
-  border: 2px dashed #3a3a48;
+  background: var(--color-bg-card);
+  border-top: 3px solid var(--color-blue);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-text-soft);
   font-size: 0.85rem;
+  letter-spacing: 0.03em;
 }
+
+.gallery-item:nth-child(2) { border-top-color: var(--color-crimson); }
 
 .tiktok { background: var(--color-bg); text-align: center; }
 
 .tiktok-inner { max-width: 700px; }
 
 .tiktok-embed-placeholder {
-  border: 2px dashed #3a3a48;
+  background: var(--color-bg-card);
+  border-top: 3px solid var(--color-crimson);
   padding: 60px 16px;
   color: var(--color-text-soft);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
 }
 
 .testimonials { background: var(--color-bg-alt); text-align: center; }
